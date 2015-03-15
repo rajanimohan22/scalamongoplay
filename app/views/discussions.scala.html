@@ -1,0 +1,10 @@
+@(discussionsList: List[Discussion])(implicit req: RequestHeader)
+<h3>Here are the discussions available at the moment.</h3>
+<ul>
+    @discussionsList.map { discussion =>
+        <li>@discussion.title,
+            <a href='@routes.DiscussionBoardApplication.showDiscussion(discussion._id + "::" + discussion.title)'>View Discussion</a>
+        </li>
+    }
+</ul>
+

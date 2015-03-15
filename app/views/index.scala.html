@@ -1,0 +1,8 @@
+@(discussionIdAndTitle: String)(implicit req: RequestHeader)
+
+<div  style="display:none" id="discussionThreadId">@discussionIdAndTitle.split("::")(0)</div>
+<div  style="display:none" id="discussionThreadTitle">@discussionIdAndTitle.split("::")(1)</div>
+
+@main("Welcome to Discussion Board Application.") {
+
+}

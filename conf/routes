@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /discussionsList                            controllers.DiscussionBoardApplication.discussionsList
+GET     /createDiscussion                           controllers.DiscussionBoardApplication.createDiscussion
+
+GET     /addDiscussion                              controllers.DiscussionBoardApplication.newDiscussion
+GET     /discussionDetail/:idAndTitle               controllers.DiscussionBoardApplication.showDiscussion(idAndTitle : String)
+
+# For Ajax Application.
+GET /ajax-call/:discussionThreadId                  controllers.DiscussionBoardApplication.ajaxCall(discussionThreadId)
+GET /addReplyComment-ajax-call/:replyCommentData    controllers.DiscussionBoardApplication.addReplyCommentAjaxCall(replyCommentData)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                               controllers.Assets.at(path="/public", file)

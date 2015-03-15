@@ -1,0 +1,18 @@
+@(discussionForm: Form[DiscussionForm])(implicit request: RequestHeader, lang: Lang)
+@import helper._
+@import models.Discussion
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<h1>Add a new Discussion</h1>
+@helper.form(action = routes.DiscussionBoardApplication.createDiscussion) {
+@inputText(discussionForm("postedBy"))
+@helper.inputText(discussionForm("title"))
+@helper.textarea(discussionForm("commentData"), args = 'rows -> 3, 'cols -> 50)
+<button type=button" >Create Discussion</button>
+
+}
+
+<script type="text/javascript">
+         $(function() {
+            $('dd.error').css("color", "red")
+            });
+</script>
